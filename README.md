@@ -1,15 +1,12 @@
-# Investigating the fine-tuning and robustness of Pre-Trained Transformer-based Language Models
-Pre-trained transformer-based language models have significantly improved the accuracy of various natural language processing tasks, and fine-tuning with these models has shown even better results. However, there is a need to evaluate the robustness of these models to different text perturbations. This study aims to explore the layer-wise similarity between pre-trained and fine-tuned transformer models, their shared invariance, and their robustness to text perturbations.
+# Aspects and Robustness of text-based transformer models
+Transformer-based pretrained models like BERT, GPT-2 and T5 have been finetuned for a large number of natural language processing (NLP) tasks, and have been shown to be very effective. However, while finetuning, what changes across layers in these models with respect to pretrained checkpoints is under-studied. Further, how robust are these models to perturbations in input text? Does the robustness vary depending on the NLP task for which the models have been finetuned? While there exists some work on studying robustness of BERT finetuned for a few NLP tasks, there is no rigorous study which compares this robustness across encoder only, decoder only and encoder-decoder models.  
 
-## Research Questions
-This study addresses the following research questions:
+In this paper, we study the robustness of three language models (BERT, GPT-2 and T5) with eight different text perturbations on the General Language Understanding Evaluation (GLUE) benchmark. Also, we use two metrics (CKA and STIR) to quantify changes between pretrained and finetuned language model representations across layers. GPT-2 representations are more robust than BERT and T5 across multiple types of input perturbation. Although models exhibit good robustness broadly, dropping nouns, verbs or changing characters are the most impactful.
+Overall, this study provides valuable insights into perturbation-specific weaknesses of popular Transformer-based models which should be kept in mind when passing inputs.
 
-- Is the effect of fine-tuning consistent across all NLP tasks?
-- Do pre-trained transformer models exhibit varying levels of performance when fine-tuned for different NLP tasks?
-- To what extent are pre-trained transformer models effective in handling text perturbations?
 
-## Methodology
-The study uses Centered Kernel Alignment (CKA) and Similarity Through Inverted Representations (STIR) to analyze the layer-wise similarity between pre-trained and fine-tuned transformer models. It also evaluates the models' robustness to different text perturbations on the General Language Understanding Evaluation (GLUE) benchmark.
-
-## Results
-The study shows that fine-tuning affects the representations of transformer models differently for different NLP tasks, with more significant changes occurring in the last layers. Although pre-trained transformer models exhibit robustness for small text perturbations, they are not entirely robust. BERT is more robust to token-level perturbations, GPT-2 to sequence-level perturbations, and T5 performs better than BERT and GPT-2 in handling both token-level and sequence-level perturbations.
+## Contributions
+- Last layers of the models are more affected than the initial layers wehn finetuning.
+- GPT-2 exhibits more robust representations than BERT and T5 across multiple types of input perturbation. 
+- Although Transformers models exhibit good robustness, the models are seen to be most affected by dropping nouns, verbs or changing characters with GPT-2 exhibiting higher robustness than T5 followed by BERT.
+- We also observed that while there is some variation in the affected layers between models and tasks, certain layers are consistently impacted across different models, indicating the importance of specific linguistic features and contextual information.
