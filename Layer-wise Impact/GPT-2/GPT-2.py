@@ -24,7 +24,7 @@ task = sys.argv[1]
 dataset = load_dataset('glue', task)
 
 
-modelName = "PavanNeerudu/gpt2-finetuned-" + task
+modelName = "userid/gpt2-finetuned-" + task
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = AutoModelForSequenceClassification.from_pretrained(modelName)
 model.to(device)
