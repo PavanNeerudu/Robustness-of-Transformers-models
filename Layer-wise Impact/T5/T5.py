@@ -22,7 +22,7 @@ else:
 task = sys.argv[1]
 dataset = load_dataset('glue', task)
 
-modelName = "userid/t5-base-finetuned-" + task
+modelName = "PavanNeerudu/t5-base-finetuned-" + task
 tokenizer = AutoTokenizer.from_pretrained(modelName)
 model = AutoModelForSeq2SeqLM.from_pretrained(modelName, output_hidden_states=True)
 model.to(device)

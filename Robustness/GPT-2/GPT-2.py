@@ -31,7 +31,7 @@ dataset = load_dataset('glue', task)
 
 
 #modelName = "gpt2-" + task
-modelName = "userid/gpt2-finetuned-" + task
+modelName = "PavanNeerudu/gpt2-finetuned-" + task
 tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 model = AutoModelForSequenceClassification.from_pretrained(modelName)
 #model = GPT2ForSequenceClassification.from_pretrained(modelName)
