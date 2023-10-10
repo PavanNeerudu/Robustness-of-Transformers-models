@@ -6,7 +6,7 @@ Overall, this study provides valuable insights into perturbation-specific weakne
 
 
 ## Contributions
-- Last layers of the models are more affected than the initial layers wehn finetuning.
+- Last layers of the models are more affected than the initial layers when finetuning.
 - GPT-2 exhibits more robust representations than BERT and T5 across multiple types of input perturbation. 
 - Although Transformers models exhibit good robustness, the models are seen to be most affected by dropping nouns, verbs or changing characters with GPT-2 exhibiting higher robustness than T5 followed by BERT.
 - We also observed that while there is some variation in the affected layers between models and tasks, certain layers are consistently impacted across different models, indicating the importance of specific linguistic features and contextual information.
